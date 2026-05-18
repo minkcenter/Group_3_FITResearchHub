@@ -39,6 +39,7 @@ import AdminLayout from './pages/admin/AdminLayout';
 import CategoryManagement from './pages/admin/CategoryManagement';
 import DocumentApproval from './pages/admin/DocumentApproval';
 import UserManagement from './pages/admin/UserManagement';
+import SystemSettings from './pages/admin/SystemSettings';
 import About from './pages/client/About';
 import NewsDetail from './pages/client/NewsDetail';
 import CreateNews from './pages/admin/CreateNews';
@@ -46,6 +47,7 @@ import NotFound from './pages/NotFound';
 import FacultyLanding from './pages/client/FacultyLanding';
 import Notifications from './pages/client/Notifications';
 import Categories from './pages/client/Categories';
+import LecturerProfile from './pages/client/LecturerProfile';
 
 
 // 1. Tạo Layout chung cho các trang của người dùng (Client)
@@ -81,6 +83,7 @@ const router = createBrowserRouter(
                 <Route path="/events" element={<FacultyLanding />} />
                 <Route path="/news" element={<Notifications />} />
                 <Route path="/news/:id" element={<NewsDetail />} />
+                <Route path="/lecturer/:id" element={<LecturerProfile />} />
 
                 {/* Các trang cần đăng nhập của Client */}
                 <Route element={<ProtectedRoute allowedRoles={['student', 'lecturer', 'admin', 'editor']} />}>
@@ -107,6 +110,7 @@ const router = createBrowserRouter(
                 <Route path="categories" element={<CategoryManagement />} />
                 <Route path="documents" element={<DocumentApproval />} />
                 <Route path="users" element={<UserManagement />} />
+                <Route path="settings" element={<SystemSettings />} />
             </Route>
 
             {/* ==========================================
